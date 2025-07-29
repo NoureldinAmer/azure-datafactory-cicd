@@ -1,0 +1,14 @@
+{
+	"name": "ls_mockprojectws",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "https://adb-4393798788163906.6.azuredatabricks.net",
+			"authentication": "MSI",
+			"workspaceResourceId": "/subscriptions/013c195c-92f2-4090-af2a-5ad250df6969/resourceGroups/mock-project/providers/Microsoft.Databricks/workspaces/mockprojectws",
+			"existingClusterId": "0717-173048-1o79p703"
+		}
+	}
+}

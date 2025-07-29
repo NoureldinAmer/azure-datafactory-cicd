@@ -1,0 +1,31 @@
+{
+	"name": "pl_injest_ctrm_data",
+	"properties": {
+		"activities": [
+			{
+				"name": "injest_raw_ctrm_data",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/noureldin-amer@outlook.com/raw/injest_raw_files"
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_mockprojectws",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"concurrency": 1,
+		"annotations": [],
+		"lastPublishTime": "2025-07-23T15:54:11Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

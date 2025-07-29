@@ -1,0 +1,24 @@
+{
+	"name": "tr_process_ctrm_data",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_process_ctrm_data",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/source/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/013c195c-92f2-4090-af2a-5ad250df6969/resourceGroups/mock-project/providers/Microsoft.Storage/storageAccounts/ctrmdl",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

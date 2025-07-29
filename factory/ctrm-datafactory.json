@@ -1,0 +1,9 @@
+{
+	"name": "ctrm-datafactory",
+	"location": "westus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "87447bd4-f016-4f06-8a90-8c34707e7365",
+		"tenantId": "033e328c-ff6c-4d42-b972-e907cb56d62f"
+	}
+}
