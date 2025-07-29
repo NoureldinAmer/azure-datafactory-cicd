@@ -1,0 +1,56 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ctrm-datafactory"
+		},
+		"ls_mockprojectws_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0717-173048-1o79p703"
+		},
+		"tr_process_ctrm_data_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/013c195c-92f2-4090-af2a-5ad250df6969/resourceGroups/mock-project/providers/Microsoft.Storage/storageAccounts/ctrmdl"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ctrm-datafactory_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_mockprojectws_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('ls_mockprojectws_properties_typeProperties_existingClusterId')]"
+					},
+					"tr_process_ctrm_data_properties_typeProperties_scope": {
+						"value": "[parameters('tr_process_ctrm_data_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

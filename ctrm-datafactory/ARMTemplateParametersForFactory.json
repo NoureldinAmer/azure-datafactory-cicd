@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ctrm-datafactory"
+		},
+		"ls_mockprojectws_properties_typeProperties_existingClusterId": {
+			"value": "0717-173048-1o79p703"
+		},
+		"tr_process_ctrm_data_properties_typeProperties_scope": {
+			"value": "/subscriptions/013c195c-92f2-4090-af2a-5ad250df6969/resourceGroups/mock-project/providers/Microsoft.Storage/storageAccounts/ctrmdl"
+		}
+	}
+}
